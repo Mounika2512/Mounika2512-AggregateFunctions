@@ -1,4 +1,3 @@
-
 import Util.ConnectionUtil;
 import Util.FileUtil;
 
@@ -52,6 +51,7 @@ public class AggregateFunctionsActivity {
         try {
             Connection connection = ConnectionUtil.getConnection();
             Statement s = connection.createStatement();
+            sql=String.format("select sum( salary) from employee");
             ResultSet rs =s.executeQuery(sql);
 
             if(rs.next()) {
@@ -76,6 +76,7 @@ public class AggregateFunctionsActivity {
         try {
             Connection connection = ConnectionUtil.getConnection();
             Statement s = connection.createStatement();
+            sql=String.format("select count(*) from employee where last_name = 'Smith' ");
             ResultSet rs =s.executeQuery(sql);
 
             if(rs.next()) {
@@ -101,6 +102,7 @@ public class AggregateFunctionsActivity {
         try {
             Connection connection = ConnectionUtil.getConnection();
             Statement s = connection.createStatement();
+            sql=String.format(" select min(salary) from employee ");
             ResultSet rs =s.executeQuery(sql);
 
             if(rs.next()) {
@@ -125,6 +127,7 @@ public class AggregateFunctionsActivity {
         try {
             Connection connection = ConnectionUtil.getConnection();
             Statement s = connection.createStatement();
+            sql=String.format(" select max(salary) from employee ");
             ResultSet rs =s.executeQuery(sql);
 
             if(rs.next()) {
